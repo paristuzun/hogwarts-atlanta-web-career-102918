@@ -12,6 +12,12 @@ class App extends Component {
     filterGreasedHogs: false
   }
 
+  componentDidMount(){
+    this.setState({
+      hogs: hogs
+    })
+  }
+
   filter = (greasedstatus) => {
     if (greasedstatus == "true") {
       this.setState({
@@ -24,6 +30,9 @@ class App extends Component {
     return (
       <div className="App">
           < Nav />
+          <HogContainer
+          
+          />
 
       </div>
     )
