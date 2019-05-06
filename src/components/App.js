@@ -2,14 +2,21 @@ import React, { Component } from 'react';
 import '../App.css';
 import Nav from './Nav'
 import hogs from '../porkers_data';
-import HogList from './HogList'
+import HogContainer from './HogContainer'
 
 class App extends Component {
 
-  constructor() {
-    super()
-    this.state = {
-      filter: null
+  state = {
+    hogs: [],
+    sortBy: "default",
+    filterGreasedHogs: false
+  }
+
+  filter = (greasedstatus) => {
+    if (greasedstatus == "true") {
+      this.setState({
+        filter: true
+      })
     }
   }
 
